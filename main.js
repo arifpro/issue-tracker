@@ -39,7 +39,7 @@ const closeIssue = id => {
   
   // document.getElementById(id).innerHTML = 'onclick = "return false"'
   // $('#'+id).css("pointer-events", "none");
-  
+  // document.getElementById("closeBtn").attributes["disabled"] = "disabled";
 
   trackerCount();
   fetchIssues();
@@ -69,8 +69,8 @@ const fetchIssues = () => {
                               <h3> ${description} </h3>
                               <p><span class="glyphicon glyphicon-time"></span> ${severity}</p>
                               <p><span class="glyphicon glyphicon-user"></span> ${assignedTo}</p>
-                              <a href="#" onclick="closeIssue(${id})" class="btn btn-warning">Close</a>
-                              <a href="#" onclick="deleteIssue(${id})" class="btn btn-danger">Delete</a>
+                              <a id="closeBtn" onclick="closeIssue(${id})" class="btn btn-warning">Close</a>
+                              <a onclick="deleteIssue(${id})" class="btn btn-danger">Delete</a>
                               </div>`;
   }
 }
